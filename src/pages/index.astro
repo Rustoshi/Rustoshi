@@ -1,0 +1,447 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getPinnedRepos } from '../lib/github.js';
+
+// Fetch pinned repositories from GitHub
+const githubUsername = 'Rustoshi';
+const pinnedRepos = await getPinnedRepos(githubUsername);
+---
+
+<Layout>
+  <!-- Hero Section -->
+  <section class="py-16 md:py-24">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+          Hey, I'm <span class="text-solana font-mono">Godwin</span>
+        </h1>
+        <p class="text-xl md:text-2xl mb-6 text-gray-300">
+          I build bots, tools, and dApps on <span class="text-solana">Solana</span> using <span class="text-rust">Rust</span> and Anchor.
+        </p>
+        <p class="text-lg mb-8 text-gray-400">
+          Always shipping. Always learning.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#projects" class="px-6 py-3 bg-solana text-dark font-medium rounded-md hover:bg-opacity-90 transition-all">
+            View My Work
+          </a>
+          <a href="#contact" class="px-6 py-3 border border-solana text-solana font-medium rounded-md hover:bg-solana hover:bg-opacity-10 transition-all">
+            Contact Me
+          </a>
+        </div>
+      </div>
+      <div class="hidden md:block">
+        <div class="relative">
+          <div class="absolute -inset-0.5 bg-gradient-to-r from-rust to-solana rounded-lg blur opacity-75"></div>
+          <div class="relative bg-dark p-6 rounded-lg border border-gray-800">
+            <pre class="font-mono text-sm text-gray-300 overflow-x-auto"><code>// rustohidev.rs
+
+pub struct Developer &#123;
+    name: String,
+    skills: Vec&lt;String&gt;,
+    focus: Vec&lt;String&gt;,
+&#125;
+
+impl Developer &#123;
+    pub fn new() -&gt; Self &#123;
+        Self &#123;
+            name: String::from("rustohidev"),
+            skills: vec![
+                String::from("Rust"),
+                String::from("Solana"),
+                String::from("Anchor"),
+                String::from("Web3"),
+            ],
+            focus: vec![
+                String::from("bots"),
+                String::from("tools"),
+                String::from("dApps"),
+            ],
+        &#125;
+    &#125;
+
+    pub fn build(&self) -&gt; Result&lt;Project, Error&gt; &#123;
+        // Always building something new...
+        Ok(Project::new("solana-project"))
+    &#125;
+&#125;</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-16 border-t border-gray-800">
+    <div class="space-y-4 mb-8">
+      <h2 class="text-3xl md:text-4xl font-bold">About Me</h2>
+      <div class="h-1 w-20 bg-solana"></div>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="md:col-span-2 space-y-6">
+        <p class="text-lg text-gray-300">
+          I'm a passionate Rust and Solana developer with a deep understanding of blockchain technology and distributed systems. My expertise lies in building high-performance, secure, and scalable applications for the Solana ecosystem.
+        </p>
+        <p class="text-lg text-gray-300">
+          With a strong foundation in systems programming and a love for Rust's safety guarantees, I specialize in developing bots that automate complex workflows, tools that enhance developer productivity, and decentralized applications that push the boundaries of what's possible on Solana.
+        </p>
+        <p class="text-lg text-gray-300">
+          My approach combines technical excellence with a practical mindset. I believe in writing clean, maintainable code that solves real problems and delivers tangible value to users and stakeholders.
+        </p>
+      </div>
+      
+      <div class="space-y-6">
+        <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
+          <h3 class="text-xl font-semibold mb-4 text-solana">My Focus Areas</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <svg class="h-6 w-6 text-solana mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Trading & DeFi Bots</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="h-6 w-6 text-solana mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Developer Tools & SDKs</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="h-6 w-6 text-solana mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>dApps & Smart Contracts</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="h-6 w-6 text-solana mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Performance Optimization</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-16 border-t border-gray-800">
+    <div class="space-y-4 mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold">Featured Projects</h2>
+      <div class="h-1 w-20 bg-solana"></div>
+      <p class="text-lg text-gray-300">A selection of my recent work in the Solana ecosystem</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {pinnedRepos.map((repo) => (
+        <div class="bg-gray-900 rounded-lg overflow-hidden border border-gray-800 transition-all hover:border-solana hover:shadow-lg hover:shadow-solana/10">
+          <div class="h-48 bg-gradient-to-r from-rust/20 to-solana/20 flex items-center justify-center p-6">
+            {repo.primaryLanguage?.name === 'Rust' ? (
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 text-rust" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+              </svg>
+            ) : repo.primaryLanguage?.name === 'TypeScript' ? (
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 text-solana" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 text-solana" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+              </svg>
+            )}
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-semibold">{repo.name}</h3>
+              {repo.primaryLanguage && (
+                <span 
+                  class="text-xs font-mono px-2 py-1 rounded" 
+                  style={`background-color: ${repo.primaryLanguage.color}20; color: ${repo.primaryLanguage.color}`}
+                >
+                  {repo.primaryLanguage.name}
+                </span>
+              )}
+            </div>
+            <p class="text-gray-400 mb-4">{repo.description || 'No description provided'}</p>
+            <div class="flex space-x-4">
+              {repo.homepageUrl && (
+                <a href={repo.homepageUrl} target="_blank" rel="noopener noreferrer" class="text-sm text-solana hover:underline flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                  Live Demo
+                </a>
+              )}
+              <a href={repo.url} target="_blank" rel="noopener noreferrer" class="text-sm text-gray-400 hover:text-solana hover:underline flex items-center">
+                <svg class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                </svg>
+                Source Code
+              </a>
+            </div>
+            
+            {/* Display stars and forks */}
+            <div class="flex mt-4 text-sm text-gray-500">
+              <div class="flex items-center mr-4">
+                <svg class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" clip-rule="evenodd" />
+                </svg>
+                <span>{repo.stargazerCount}</span>
+              </div>
+              <div class="flex items-center">
+                <svg class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm0 2a8 8 0 100 16 8 8 0 000-16zm-1.95 9.267a3.733 3.733 0 01-1.38-1.554.75.75 0 111.356-.642 2.25 2.25 0 003.894-.228.75.75 0 011.374.603 3.733 3.733 0 01-3.202 1.89 3.733 3.733 0 01-1.042-.07zm1.95-6.767a.75.75 0 100 1.5.75.75 0 000-1.5zm-3.5 0a.75.75 0 100 1.5.75.75 0 000-1.5z" clip-rule="evenodd" />
+                </svg>
+                <span>{repo.forkCount}</span>
+              </div>
+            </div>
+            
+            {/* Display topics */}
+            {repo.repositoryTopics?.nodes?.length > 0 && (
+              <div class="flex flex-wrap gap-2 mt-3">
+                {repo.repositoryTopics.nodes.map((topicNode: any) => (
+                  <span class="text-xs px-2 py-1 bg-gray-800 text-gray-400 rounded-full">
+                    #{topicNode.topic.name}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-12 text-center">
+      <a href="https://github.com/Rustoshi" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 border border-solana text-solana font-medium rounded-md hover:bg-solana hover:bg-opacity-10 transition-all">
+        <svg class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+        </svg>
+        View All Projects on GitHub
+      </a>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-16 border-t border-gray-800">
+    <div class="space-y-4 mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold">Skills & Technologies</h2>
+      <div class="h-1 w-20 bg-solana"></div>
+      <p class="text-lg text-gray-300">My technical expertise and tools of choice</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Skill Category 1: Languages -->
+      <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
+        <div class="flex items-center mb-4">
+          <div class="bg-rust/10 p-2 rounded-md mr-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-rust" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold">Languages</h3>
+        </div>
+        <ul class="space-y-2">
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-rust rounded-full mr-2"></span>
+            <span>Rust</span>
+          </li>
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-solana rounded-full mr-2"></span>
+            <span>TypeScript</span>
+          </li>
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-gray-400 rounded-full mr-2"></span>
+            <span>JavaScript</span>
+          </li>
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-gray-400 rounded-full mr-2"></span>
+            <span>Python</span>
+          </li>
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-gray-400 rounded-full mr-2"></span>
+            <span>C/C++</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Skill Category 2: Blockchain -->
+      <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
+        <div class="flex items-center mb-4">
+          <div class="bg-solana/10 p-2 rounded-md mr-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-solana" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold">Blockchain</h3>
+        </div>
+        <ul class="space-y-2">
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-solana rounded-full mr-2"></span>
+            <span>Solana</span>
+          </li>
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-solana rounded-full mr-2"></span>
+            <span>Anchor</span>
+          </li>
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-gray-400 rounded-full mr-2"></span>
+            <span>Web3.js</span>
+          </li>
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-gray-400 rounded-full mr-2"></span>
+            <span>SPL Tokens</span>
+          </li>
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-gray-400 rounded-full mr-2"></span>
+            <span>NFTs</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Skill Category 3: Web Development -->
+      <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
+        <div class="flex items-center mb-4">
+          <div class="bg-solana/10 p-2 rounded-md mr-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-solana" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold">Web Development</h3>
+        </div>
+        <ul class="space-y-2">
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-solana rounded-full mr-2"></span>
+            <span>Next.js</span>
+          </li>
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-solana rounded-full mr-2"></span>
+            <span>Node.js</span>
+          </li>
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-gray-400 rounded-full mr-2"></span>
+            <span>Express</span>
+          </li>
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-gray-400 rounded-full mr-2"></span>
+            <span>React</span>
+          </li>
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-gray-400 rounded-full mr-2"></span>
+            <span>Tailwind CSS</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Skill Category 4: Tools & DevOps -->
+      <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
+        <div class="flex items-center mb-4">
+          <div class="bg-rust/10 p-2 rounded-md mr-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-rust" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold">Tools & DevOps</h3>
+        </div>
+        <ul class="space-y-2">
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-rust rounded-full mr-2"></span>
+            <span>Cargo</span>
+          </li>
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-solana rounded-full mr-2"></span>
+            <span>Solana CLI</span>
+          </li>
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-gray-400 rounded-full mr-2"></span>
+            <span>Git</span>
+          </li>
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-gray-400 rounded-full mr-2"></span>
+            <span>Docker</span>
+          </li>
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-gray-400 rounded-full mr-2"></span>
+            <span>CI/CD</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 border-t border-gray-800">
+    <div class="space-y-4 mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold">Get In Touch</h2>
+      <div class="h-1 w-20 bg-solana"></div>
+      <p class="text-lg text-gray-300">Interested in working together? Let's connect!</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div class="space-y-6">
+        <p class="text-lg text-gray-300">
+          I'm always open to discussing new projects, opportunities, or partnerships. Whether you have a question or just want to say hi, feel free to reach out to me through any of the channels below.
+        </p>
+        
+        <div class="space-y-4">
+          <div class="flex items-start">
+            <div class="bg-solana/10 p-2 rounded-md mr-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-solana" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-1">Email</h3>
+              <a href="mailto:rustoshidev@gmail.com" class="text-gray-400 hover:text-solana transition-colors">rustoshidev@gmail.com</a>
+            </div>
+          </div>
+          
+          <div class="flex items-start">
+            <div class="bg-solana/10 p-2 rounded-md mr-4">
+              <svg class="h-6 w-6 text-solana" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-1">GitHub</h3>
+              <a href="https://github.com/Rustoshi" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-solana transition-colors">github.com/Rustoshi</a>
+            </div>
+          </div>
+          
+          <div class="flex items-start">
+            <div class="bg-solana/10 p-2 rounded-md mr-4">
+              <svg class="h-6 w-6 text-solana" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-1">Twitter</h3>
+              <a href="https://twitter.com/rustoshidev" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-solana transition-colors">@rustoshidev</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
+        <form class="space-y-6">
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Name</label>
+            <input type="text" id="name" name="name" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-solana focus:border-transparent">
+          </div>
+          
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+            <input type="email" id="email" name="email" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-solana focus:border-transparent">
+          </div>
+          
+          <div>
+            <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
+            <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-solana focus:border-transparent"></textarea>
+          </div>
+          
+          <button type="submit" class="w-full px-6 py-3 bg-solana text-dark font-medium rounded-md hover:bg-opacity-90 transition-all">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -6,5 +6,5 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   integrations: [tailwind()],
   site: 'https://rustohidev.github.io',
-  base: '/rustohidev.github.io',
+  base: '/',
 });

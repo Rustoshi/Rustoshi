@@ -13,9 +13,7 @@ I'm a passionate Web and Blockchain(Rust and Solana) developer with expertise in
 - 🤖 Trading & DeFi Bots
 - 🛠️ Developer Tools & SDKs
 - 📱 dApps & Smart Contracts
-- ⚡ Performance Optimization
 
-With a strong foundation in systems programming and a love for Rust's safety guarantees, I specialize in developing solutions that push the boundaries of what's possible on Solana.
 
 ## 📫 Contact
 

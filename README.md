@@ -1,4 +1,4 @@
-# Godwin's Portfolio - Rust & Solana Developer
+# Godwyn's Portfolio - Rust & Solana Developer
 
 ![Rust](https://img.shields.io/badge/Rust-B7410E?style=for-the-badge&logo=rust&logoColor=white)
 ![Solana](https://img.shields.io/badge/Solana-14F195?style=for-the-badge&logo=solana&logoColor=white)
